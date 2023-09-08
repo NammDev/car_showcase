@@ -1,10 +1,17 @@
+import CarCard from '@/components/CarCard'
 import CustomFilter from '@/components/CustomFilter'
 import Hero from '@/components/Hero'
 import SearchBar from '@/components/SearchBar'
+import ShowMore from '@/components/ShowMore'
 import { fuels, yearsOfProduction } from '@/constants'
+import { fetchCars } from '@/utils'
 import Image from 'next/image'
 
-export default function Home() {
+export default async function Home() {
+  const allCars = await fetchCars()
+
+  const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars
+
   return (
     <main className='overflow-hidden'>
       <Hero />
@@ -23,7 +30,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* 
         {!isDataEmpty ? (
           <section>
             <div className='home__cars-wrapper'>
@@ -32,17 +38,17 @@ export default function Home() {
               ))}
             </div>
 
-            <ShowMore
+            {/* <ShowMore
               pageNumber={(searchParams.limit || 10) / 10}
               isNext={(searchParams.limit || 10) > allCars.length}
-            />
+            /> */}
           </section>
         ) : (
           <div className='home__error-container'>
             <h2 className='text-black text-xl font-bold'>Oops, no results</h2>
             <p>{allCars?.message}</p>
           </div>
-        )} */}
+        )}
       </div>
     </main>
   )

@@ -41,27 +41,31 @@ export const deleteSearchParams = (type: string) => {
   return newPathname
 }
 
-export async function fetchCars(filters: FilterProps) {
-  const { manufacturer, year, model, limit, fuel } = filters
+export async function fetchCars() {
+  // filters: FilterProps
+  // const { manufacturer, year, model, limit, fuel } = filters
 
-  // Set the required headers for the API request
-  const headers: HeadersInit = {
-    'X-RapidAPI-Key': process.env.NEXT_PUBLIC_RAPID_API_KEY || '',
-    'X-RapidAPI-Host': 'cars-by-api-ninjas.p.rapidapi.com',
+  // const url = `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`
+
+  const url = `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=corolla`
+
+  const options = {
+    method: 'GET',
+    // Set the required headers for the API request
+    headers: {
+      'X-RapidAPI-Key': 'abcd1b79ebmsh20750cef3fffbc9p1cba32jsn5e8898a38eed',
+      'X-RapidAPI-Host': 'cars-by-api-ninjas.p.rapidapi.com',
+    },
   }
 
-  // Set the required headers for the API request
-  const response = await fetch(
-    `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`,
-    {
-      headers: headers,
-    }
-  )
-
-  // Parse the response as JSON
-  const result = await response.json()
-
-  return result
+  try {
+    const response = await fetch(url, options)
+    // Parse the response as JSON
+    const result = await response.json()
+    return result
+  } catch (error) {
+    console.error(error)
+  }
 }
 
 export const generateCarImageUrl = (car: CarProps, angle?: string) => {
