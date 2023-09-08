@@ -41,13 +41,10 @@ export const deleteSearchParams = (type: string) => {
   return newPathname
 }
 
-export async function fetchCars() {
-  // filters: FilterProps
-  // const { manufacturer, year, model, limit, fuel } = filters
+export async function fetchCars(filters: FilterProps) {
+  const { manufacturer, year, model, limit, fuel } = filters
 
-  // const url = `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`
-
-  const url = `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=q5`
+  const url = `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`
 
   const options = {
     method: 'GET',
