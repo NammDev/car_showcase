@@ -52,17 +52,25 @@ export interface OptionProps {
   value: string
 }
 
-export interface CustomFilterProps {
-  title: string
+export interface CustomFilterProps<T> {
   options: OptionProps[]
+  setFilter: (selected: T) => void
 }
 
 export interface ShowMoreProps {
   pageNumber: number
   isNext: boolean
+  setLimit: (limit: number) => void
 }
 
 export interface SearchManuFacturerProps {
-  manufacturer: string
+  selected: string
+  setSelected: (selected: string) => void
+}
+
+export type CarState = CarProps[] & { message?: string }
+
+export interface SearchBarProps {
   setManuFacturer: (manufacturer: string) => void
+  setModel: (model: string) => void
 }
