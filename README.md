@@ -1,35 +1,28 @@
-# CarRental & Sales - Next.js Project
+# Car Showcase
 
-Welcome to CarRental & Sales, a web application for renting or purchasing vehicles online. This project leverages the power of Next.js and Rapid API to provide a seamless experience for users looking to explore, search, and transact with ease.
+Welcome to the Car Showcase project! This web application allows users to explore a collection of cars, filter them by various criteria such as manufacturer, model, fuel type, and year, and view car details along with high-quality images.
+
+## Project Overview
+
+The Car Showcase project is a web application built with Next.js 13. It leverages data from the Rapid API for car information and obtains high-quality car images from imagin.studio. The application focuses on providing users with an interactive and visually appealing experience for browsing and exploring cars.
 
 ## Features
 
-- 🚀 Browse a diverse selection of vehicles, including cars, trucks, and more.
-- 🔍 Utilize advanced search functionality to find your ideal vehicle.
-- 💼 Easily list your own vehicle for rent or sale.
-- 🌐 Real-time data and information, thanks to the integration with Rapid API.
-- 📱 Responsive design for an optimal user experience across devices.
-- 📦 Easy setup and customization for your specific requirements.
+- Browse and explore a diverse collection of cars.
+- Filter cars by manufacturer, model, fuel type, and year.
+- View detailed information about each car.
+- Display high-quality car images for a visually appealing experience.
+- Smooth client-side rendering for a seamless user experience.
+- Styling using [Tailwind CSS](https://tailwindcss.com/).
+- Dropdowns and transitions powered by [Headless UI](https://headlessui.dev/).
 
-## Getting Started
+## Technologies
 
-1. **Installation**: Clone the repository and install dependencies.
+The Car Showcase project makes use of the following technologies:
 
-   ```bash
-   git clone [Your Repo URL]
-   cd car-rental-sales-nextjs
-   npm install
-   ```
-
-In this README:
-
-- Provide an overview of the project, its features, and its purpose.
-- Include installation instructions.
-- Mention how to customize and configure the project.
-- Link to a live demo if available.
-- Reference documentation for more in-depth information.
-- Encourage contributions from the community.
-- Specify the project's license.
-- Provide contact information.
-
-Please replace `[Your Repo URL]`, `[Live Demo URL]`, `[Your Name]`, and `[Your Email Address]` with the actual information relevant to your project. Additionally, you may want to create a separate `LICENSE` file with the text of your chosen open-source license and place it in your repository.
+- [Next.js 13](https://nextjs.org/): A popular React framework for building server-rendered React applications.
+- [Rapid API](https://rapidapi.com/): To fetch car information and data.
+- [imagin.studio](https://imagin.studio/): To retrieve high-quality car images.
+- [React](https://reactjs.org/): JavaScript library for building user interfaces.
+- [Tailwind CSS](https://tailwindcss.com/): A utility-first CSS framework for fast and responsive web development.
+- [Headless UI](https://headlessui.dev/): A set of completely unstyled, fully accessible UI components for React.
